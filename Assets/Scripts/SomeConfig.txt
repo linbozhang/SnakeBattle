@@ -1,0 +1,27 @@
+ClitherConfig.java
+Server
+{
+	port=443,maxConnections=100(maxPlayers=20),ip="localhost",name="unknown server"
+}
+World
+{
+	View
+	{
+		baseX=1024,baseY=592
+	}
+	Border
+	{
+		left=0,right=6000,top=0,bottom=6000
+	}
+	Food
+	{
+		spawnInterval=20,spawnPerInterval=10,startAmount=100,maxAmount=500,foodSize=1
+	}
+}
+Player
+{
+	startMass=35,maxMass=255000(85500),maxNickLength=15
+}
+
+
+change project compliler to jre 1.5
