@@ -1,10 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
-namespace Snake
+namespace SnakeGame
 {
     public class CNetworManager : NetworkManager
     {
+
+        private static CNetworManager instance;
+
+        void Awake()
+        {
+            instance = this;
+        }
+
+        public static CNetworManager Instance
+        {
+            get {
+                return instance;
+            }
+        }
+
 
         #region parentProperty
         //
@@ -513,7 +528,7 @@ namespace Snake
         /// <param name="conn"> Connection from client.</param>
         public override void OnServerConnect(NetworkConnection conn)
         {
-
+            Debug.Log("OnServerConnect");
         }
 
         public override void OnServerDisconnect(NetworkConnection conn)
@@ -583,7 +598,8 @@ namespace Snake
         //     ///
         public override void OnStartServer()
         {
-
+            ClitherServer.getInstance().run();
+            //ClitherServer
         }
         //
         // Summary:
